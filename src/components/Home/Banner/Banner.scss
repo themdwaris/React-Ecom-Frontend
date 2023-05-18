@@ -1,0 +1,89 @@
+@import "../../../css-config/mixins.scss";
+
+.heroBanner {
+    padding: 40px 0;
+    padding-top: 60px;
+    background-image: linear-gradient(to right, #8e2d8e, #4a00e0);
+    position: relative;
+    
+    @include md {
+        height: calc(100vh - 70px);
+    }
+
+    .heroContent {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        padding: 0 20px;
+        @include md {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .heroText {
+            display: flex;
+            max-width: 450px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: white;
+            margin-bottom: 30px;
+            // border: 1px solid white;
+            @include md{
+                gap: 25px;
+            }
+            h1 {
+                font-size: 5rem;
+                font-weight: 700;
+                margin-bottom: 50px;
+                @include md{
+                    font-size: 9rem;
+                }
+            }
+
+            p {
+                padding: 0 20px;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            .cta {
+                display: flex;
+                gap: 30px;
+
+                .ctaButton{
+                    padding: 8px 25px;
+                    border: 1px solid white;
+                    font-size: 14px;
+                    font-weight: 500;
+                    cursor: pointer;
+                }
+                .v2{
+                    background-color: white;
+                    color: #000;
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.702);
+                        border: none;
+                    }
+                }
+            }
+        }
+
+        .bannerImg {
+            width: 200px;
+            position: relative;
+            z-index: 9;
+            padding-bottom: 40px;
+          
+            @include md {
+                width: 500px;
+                margin-top: 50px;
+                margin-right: 60px;
+                margin-bottom: 20px;
+            }
+           
+        }
+    }
+}

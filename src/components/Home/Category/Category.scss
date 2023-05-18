@@ -1,0 +1,49 @@
+@import "../../../css-config/mixins.scss";
+
+.categorySection{
+    // width: 100%;
+    // position: relative;
+    padding: 50px 20px;
+    @include md{
+        padding: 50px 0;
+    }
+    .title{
+        font-size: 20px;
+        // padding-left: 20px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        color: rgba(0, 0, 0, 0.8);
+        @include md{
+            font-size: 30px;
+            padding-left: 155px;
+        }
+
+    }
+
+    .categoryContent{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+       
+        .category{
+            width: calc(50% - 5px);
+            background-color: black;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all .3s ease;
+            @include md{
+                width: calc(25% - 10px);
+            }
+            img{
+                width: 100%;
+                transition: all .3s ease;
+            }
+            &:hover img{
+                transform: scale(1.2);
+            }
+        }
+
+    }
+}

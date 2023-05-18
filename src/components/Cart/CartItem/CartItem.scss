@@ -1,0 +1,79 @@
+
+.cartProducts{
+    flex-grow: 1;
+
+    .cartProduct{
+        display: flex;
+        padding: 12px 15px;
+        gap: 20px;
+        position: relative;
+
+        .img{
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            border-radius: 10px;
+            padding: 3px;
+            img{
+                width: 100%;
+                height: 100%;
+
+            }
+        }
+        .cartDetails{
+            // position: relative;
+            overflow: hidden;
+            .name{
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 10px;
+
+            }
+            svg{
+                font-size: 20px;
+                cursor: pointer;
+                position: absolute;
+                right: 15px;
+                top: 50px;
+                &:hover{
+                    color: rgb(247, 105, 105);
+                }
+            }
+            .quantityButton{
+                width: fit-content;
+                padding: 8px 0;
+                span{
+                    padding: 0px 10px;
+                    user-select: none;
+                    font-size: 13px;
+                    cursor: pointer;
+                    display: inline-block;
+                    color: rgba(0, 0, 0, 0.675);
+                    border: 1px solid rgba(0, 0, 0, 0.301);
+                    &:nth-child(2){
+                        width: 40px;
+                        text-align: center;
+                    }
+                }
+            }
+            .subTotalPrice{
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                font-weight: 600;
+                gap: 5px;
+                .price{
+                    color: #8d2de8;
+                }
+            }
+            
+        }
+        &:hover{
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+}

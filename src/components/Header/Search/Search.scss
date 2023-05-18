@@ -1,0 +1,142 @@
+@import "../../../css-config/mixins.scss";
+
+.searchContainer {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    background: white;
+
+    .searchContent {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(100%);
+        animation: searchBarSlide .5s ease forwards;
+
+        input {
+            width: 100%;
+            height: 60px;
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            outline: none;
+            padding: 5px 20px;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: rgba(0, 0, 0, 0.05);
+
+            @include md {
+                font-size: 25px;
+                height: 80px;
+            }
+
+            ::placeholder {
+                font-size: 18px;
+                text-transform: uppercase;
+                font-weight: 700;
+
+                @include md {
+                    font-size: 40px;
+                }
+            }
+        }
+
+        svg {
+            position: absolute;
+            right: 18px;
+            font-size: 22px;
+            color: rgb(56, 56, 56);
+            cursor: pointer;
+
+            @include md {
+                right: 60px;
+                font-size: 30px;
+            }
+
+        }
+    }
+
+    .searchResultContent {
+        width: calc(100% - 20px);
+        margin: 0 auto;
+
+        @include md {
+            max-width: 800px;
+        }
+
+        .searchResult {
+            height: calc(100vh - 110px);
+            margin: 20px 0;
+            overflow-y: auto;
+            
+            ::-webkit-scrollbar{
+                width: 0;
+            }
+
+            @include md {
+                height: calc(100vh - 160px);
+            }
+
+            .searchResultItem {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(172, 171, 171, 0.3);
+                cursor: pointer;
+
+                .img {
+                    width: 70px;
+                    height: 70px;
+                    padding: 3px;
+                    background: rgba(0, 0, 0, 0.05);
+                    border-radius: 10px;
+                    flex-shrink: 0;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .prodDetails {
+                  overflow: hidden;
+                    .name {
+                        display: block;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        font-size: 16px;
+                        color: rgb(48, 47, 47);
+                        font-weight: 700;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        color: rgba(0, 0, 0, 0.5);
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        // display: block;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@keyframes searchBarSlide {
+    0% {
+        transform: translateY(200%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,155 @@
+@import "../../css-config/mixins.scss";
+
+.singleProductContainer{
+    margin: 30px 0;
+    padding: 0 15px;
+    @include md{
+        margin: 50px 0;
+        padding: 0;
+    }
+    
+    .layoutContainer{
+
+        .singleProductContent{
+            display: flex;
+            gap:40px;
+            flex-direction: column;
+            justify-content: center;
+            
+            @include md{
+                flex-direction: row;
+            }
+            .left{
+                width: 100%;
+                border-radius: 10px;
+                flex-shrink: 0;
+                cursor: pointer;
+                background-color: rgba(0, 0, 0, 0.05);
+                @include md{
+                    width: 500px;
+                    height: 500px;
+                }
+                img{
+                    width: 100%;
+                    display: block;
+                    border-radius: 10px;
+                    transition: all .3s ease;
+                }
+            }
+            .right{
+                width: 100%;
+                padding-top: 30px;
+                @include md{
+                    max-width: 500px;
+                    padding-top: 50px;
+            
+                }
+                .title{
+                    font-size: 22px;
+                    line-height: 30px;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+                }
+                .price{
+                    font-size: 23px;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                }
+                .desc{
+                    font-size: 14px;
+                    color: rgb(81, 81, 81);
+                }
+
+                .cartButton{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin: 25px 0;
+                    .quantityButton{
+                        width: fit-content;
+
+                        span{
+                            padding: 5px 10px;
+                            font-size: 18px;
+                            user-select: none;
+                            cursor: pointer;
+                            display: inline-block;
+                            color: rgba(0, 0, 0, 0.675);
+                            border: 1px solid rgba(0, 0, 0, 0.301);
+                            &:nth-child(2){
+                                width: 55px;
+                                text-align: center;
+                            }
+                            &:hover{
+                                background-color: rgb(229, 227, 227);
+                            }
+                        }
+                    }
+
+                    button{
+                        border: none;
+                        outline: none;
+                        padding: 7px 15px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        background-color: #8e2de2;
+                        color: white;
+                        font-size: 16px;
+                        cursor: pointer;
+
+                        svg{
+                            font-size: 18px;
+                        }
+                        &:hover{
+                            background: #5d2059;
+                        }
+                    }
+                    .gotoBack{
+                        background-color: rgb(232, 232, 232);
+                        color: black;
+                        &:hover{
+                            color: white;
+                        }
+                    }
+                }
+                .divider{
+                    width: 95%;
+                    display: block;
+                    height: 1px;
+                    background: rgba(0, 0, 0,0.1);
+                    margin-bottom: 20px;
+                    
+
+                }
+                .itemInfo{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 20px;
+                    .category{
+                        color: black;
+                        font-weight: 700;
+                        span{
+                            color: rgb(63, 62, 62);
+                            font-size: 14px;
+                            padding-left: 10px;
+                        }
+                    }
+                    .shareIcons{
+                        color: black;
+                        font-weight: 700;
+                        
+                        span{
+                            color: rgb(63, 62, 62);
+                            word-spacing: 10px;
+                            padding-left: 15px;
+                            font-size: 25px;
+                            cursor: pointer;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

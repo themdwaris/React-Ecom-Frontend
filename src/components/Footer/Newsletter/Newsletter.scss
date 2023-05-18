@@ -1,0 +1,103 @@
+@import "../../../css-config/mixins.scss";
+
+.newsLetterSection {
+    width: 100%;
+    height: 380px;
+    background: #f9f9f9 url("../../../assets/newsletter-bg.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .newsLetterContent {
+        display: flex;
+        width: fit-content;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+
+        @include md {
+            gap: 35px;
+        }
+
+        .smallText {
+            font-size: 18px;
+            font-weight: 500;
+            // margin-bottom: 20px;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, 0.4);
+        }
+
+        .bigText {
+            font-size: 21px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 500;
+            padding: 0 20px;
+
+            // margin-bottom: 20px;
+            @include md {
+                font-size: 25px;
+            }
+
+        }
+
+        .form {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            padding: 0 20px;
+
+            input {
+                height: 30px;
+                width: calc(100% - 100px);
+                padding: 0 14px;
+                font-size: 14px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                outline: none;
+            }
+
+            button {
+                width: 100px;
+                height: 30px;
+                background: linear-gradient(to right, #8e2d8e, #4a00e0);
+                color: white;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                text-transform: uppercase;
+                transition: all .4s ease;
+
+                &:hover {
+                    background: linear-gradient(to left, #8e2d8e, #4a00e0);
+                    transition: all .4s ease;
+                }
+            }
+        }
+
+        .privacyText {
+            font-size: 16px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .socialIcons {
+            display: flex;
+            gap: 25px;
+
+            svg {
+                font-size: 20px;
+                color: rgba(0, 0, 0, 0.7);
+                cursor: pointer;
+                transition: all .4s ease;
+
+                &:hover {
+                    color: #8e2d8e;
+                    transform: translateY(-12px);
+                    transition: all .4s ease;
+                }
+            }
+        }
+    }
+}

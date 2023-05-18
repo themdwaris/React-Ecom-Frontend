@@ -1,0 +1,23 @@
+@import "../../css-config/mixins.scss";
+
+.categoryContainer{
+    margin: 25px 0;
+    padding: 0 10px;
+    @include md{
+        margin: 60px 0;
+    }
+    .layout{
+        .categoryTitle{
+            font-size: 24px;
+            @include md{
+                font-size: 30px;
+            }
+        }
+        .productSection{
+            margin: 20px 0;
+            @include md{
+                margin: 50px 0;
+            }
+        }
+    }
+}

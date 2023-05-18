@@ -1,0 +1,108 @@
+@import "../../css-config/mixins.scss";
+
+.footerSection {
+    width: 100%;
+    position: relative;
+
+    .footerContent {
+        padding: 50px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
+
+        @include md {
+            justify-content: space-between;
+          
+        }
+
+        .footerCol {
+            max-width: 320px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            // border: 1px solid black;
+            position: relative;
+            gap: 5px;
+
+            .title {
+                font-size: 18px;
+                margin-bottom: 10px;
+                font-weight: 700;
+            }
+
+            .text {
+                font-size: 14px;
+                font-weight: 500;
+                color: rgba(0, 0, 0, 0.6);
+
+            }
+
+            span {
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .contactItems {
+                display: flex;
+                // align-items: center;
+                gap: 8px;
+
+                svg {
+                    font-size: 18px;
+                    flex-shrink: 0;
+                    color: rgb(24, 24, 24,0.6);
+                }
+            }
+
+            .categories {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+    }
+
+
+    .bottomBar {
+        width: 100%;
+        background-color: #fffffff2;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding:30px 20px;
+        @include md{
+            padding:20px;
+        }
+        .bottomBarContent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include md {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .text {
+                font-size: 13px;
+                color: rgb(30, 29, 29,0.8);
+                text-align: center;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                @include md{
+                    margin-bottom: 0;
+                }
+                a {
+                    color: rgb(30, 29, 29,0.8);
+                }
+            }
+            img{
+                cursor: pointer;
+            }
+        }
+    }
+
+}

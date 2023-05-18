@@ -1,0 +1,163 @@
+@import "../../css-config/mixins.scss";
+
+.cartPanel {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    transition: all .3s ease;
+    justify-content: flex-end;
+
+    .backShadow {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+
+    }
+
+    .cartContent {
+        width: 100%;
+        height: 100%;
+        background: white;
+        position: relative;
+        transition: all .3s ease;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        animation: slideCartMenu .3s ease forwards;
+        padding-bottom: 20px;
+
+        @include md {
+            max-width: 340px;
+        }
+
+        .cartHeader {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            .heading {
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 0;
+                text-transform: uppercase;
+                flex-grow: 1;
+            }
+
+            .closeBtn {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+                svg {
+                    font-size: 18px;
+                }
+
+                .text {
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    color: rgb(113, 112, 112);
+                }
+            }
+        }
+
+        .cartFooter {
+      
+          
+            .subTotal {
+                width: 100%;
+                padding: 20px 15px;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+                .text {
+                    font-size: 16px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+
+                    &.total {
+                        color: #8e2de8;
+
+                    }
+                }
+            }
+
+            .checkout {
+                text-align: center;
+                margin-top: 20px;
+                padding: 0 15px;
+                button {
+                    padding: 10px 0;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    background: #8e2de8;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .emptyCart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        margin-top: 70px;
+
+        @include md {
+            margin-top: 80px;
+        }
+
+        svg {
+            font-size: 70px;
+            color: rgb(118, 116, 116);
+
+            @include md {
+                font-size: 80px;
+            }
+
+        }
+
+        span {
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.765);
+        }
+
+        .returnCta {
+            border: none;
+            outline: none;
+            padding: 8px 15px;
+            color: white;
+            background: #8e2de8;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes slideCartMenu {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
