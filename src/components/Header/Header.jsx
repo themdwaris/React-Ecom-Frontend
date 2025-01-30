@@ -16,6 +16,7 @@ const Header = () => {
   const [lastScroll, setLastScroll] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const [showMenu,setShowMenu]=useState=(false)
   const {cartCount} = useYourContext()
 
 
@@ -41,7 +42,7 @@ const Header = () => {
             <li>Categories</li>
           </ul>
           <div className="center">
-            <span className="menuBar">
+            <span className="menuBar" onClick={()=>setShowMenu(!showMenu)}>
               <IoIosMenu />
             </span>
             <NavLink to="/">Shopify</NavLink>
