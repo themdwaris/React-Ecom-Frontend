@@ -16,7 +16,7 @@ const Header = () => {
   const [lastScroll, setLastScroll] = useState(0);
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [showMenu,setShowMenu]=useState=(false)
+  const [showMenu,setShowMenu]= useState(false)
   const {cartCount} = useYourContext()
 
 
